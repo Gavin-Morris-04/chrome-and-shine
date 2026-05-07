@@ -13,5 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
       navToggle.setAttribute('aria-expanded', String(!expanded));
       siteNav.classList.toggle('open');
     });
+
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navToggle.setAttribute('aria-expanded', 'false');
+        siteNav.classList.remove('open');
+      });
+    });
   }
 });
